@@ -13,7 +13,7 @@ module TabTab
       name = opts[:name] || tab_name_helper(tab_literal)
       html = tab_html_attributes_helper(tab_literal, opts[:html])
 
-      content_tag(:li, html) { link_to(name, url) }
+      content_tag(:li, html) { link_to("<span>#{name}</span>", url) }
     end
 
     # Use in your views when you need to render several tabs with similar
