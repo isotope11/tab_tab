@@ -62,8 +62,9 @@ module TabTab
       tab  = Tab.new(tab_literal)
 
       if controller.current_tab.activates?(tab)
-        html[:class] = [
-          (html[:class] || ''), 'active' ].sort.join(' ').strip
+        html[:class] = [(html[:class] || ''), 'active' ].sort.join(' ').strip
+      else
+        html[:class] = [(html[:class] || ''), 'inactive' ].sort.join(' ').strip
       end
 
       html[:id] ||= tab.html_id
